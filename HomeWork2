@@ -1,0 +1,124 @@
+using System;
+using System.Collections.Generic;
+
+public class Item
+{
+    public double ShippingWeight { get; set; }
+    public string Description { get; set; }
+
+    public double GetPriceForQuantity(int quantity)
+    {
+        // Implement pricing logic
+        return 0.0;
+    }
+
+    public bool InStock()
+    {
+        // Implement in-stock logic
+        return true;
+    }
+
+    public double GetTax()
+    {
+        // Implement tax calculation logic
+        return 0.0;
+    }
+}
+
+public class LineItem
+{
+    public int Quantity { get; set; }
+    public string TaxStatus { get; set; }
+
+    public double CalcSubTotal()
+    {
+        // Implement subtotal calculation logic
+        return 0.0;
+    }
+
+    public double CalcWeight()
+    {
+        // Implement weight calculation logic
+        return 0.0;
+    }
+
+    public double CalcTax()
+    {
+        // Implement tax calculation logic
+        return 0.0;
+    }
+}
+
+public class OrderDetail
+{
+    public Item Item { get; set; }
+    public LineItem LineItem { get; set; }
+}
+
+public class Order
+{
+    public DateTime Date { get; set; }
+    public string Status { get; set; }
+    public List<OrderDetail> OrderDetails { get; set; }
+
+    public double CalcSubTotal()
+    {
+        // Implement subtotal calculation logic
+        return 0.0;
+    }
+
+    public double CalcTax()
+    {
+        // Implement tax calculation logic
+        return 0.0;
+    }
+
+    public double CalcTotal()
+    {
+        // Implement total calculation logic
+        return 0.0;
+    }
+
+    public double CalcTotalWeight()
+    {
+        // Implement total weight calculation logic
+        return 0.0;
+    }
+}
+
+public class Payment
+{
+    public double Amount { get; set; }
+}
+
+public class Cash : Payment
+{
+    public double CashTendered { get; set; }
+}
+
+public class Check : Payment
+{
+    public string Name { get; set; }
+    public string Type { get; set; }
+    public DateTime ExpDate { get; set; }
+}
+
+public class Credit : Payment
+{
+    public string Name { get; set; }
+    public string Type { get; set; }
+
+    public bool Authorized()
+    {
+        // Implement authorization logic
+        return true;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Your application logic goes here
+    }
+}
